@@ -8,8 +8,9 @@ Vagrant.configure(2) do |config|
       node.vm.hostname = "haproxy#{i}"
       node.vm.network "private_network", ip:"10.0.26.20#{i}"
       node.vm.provider "virtualbox" do |vb|
-        vb.memory = "256"
+        vb.memory = "512"
         vb.name = "haproxy#{i}"
+        vb.cpus = 2
       end
       node.vm.provision "shell", path: "shell/iptables.sh"
     end
@@ -23,8 +24,9 @@ Vagrant.configure(2) do |config|
       app.vm.synced_folder ".", "/vagrant", disabled: true
       app.vm.box_check_update = false
       app.vm.provider "virtualbox" do |vb|
-        vb.memory = "256"
+        vb.memory = "512"
         vb.name = "web#{i}"
+        vb.cpus = 2
       end
       app.vm.provision "shell", path: "shell/iptables.sh"
   end
