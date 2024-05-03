@@ -1,8 +1,12 @@
 ---
+- name: Add nginx stable repository from PPA and install its signing key on Ubuntu target
+  ansible.builtin.apt_repository:
+    repo: ppa:vbernat/haproxy-2.8
 
 - name: install haproxy
-  yum: name=haproxy state=present
+  apt: name=haproxy state=present
   tags: haproxy
+  update_cache: yes
 
 - name: deploy haproxy config
   template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg

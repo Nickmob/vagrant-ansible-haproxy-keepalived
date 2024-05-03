@@ -1,5 +1,6 @@
 ---
 
-- yum:
-    name: ['epel-release', 'zip', 'unzip', 'bzip2', 'wget', 'libselinux-python', 'policycoreutils-python', 'git', 'curl', 'mc', 'nano']
+- apt:
+    name: ['zip', 'unzip', 'bzip2', 'wget', 'curl', 'mc', 'nano']
     state: present
+    update_cache: yes

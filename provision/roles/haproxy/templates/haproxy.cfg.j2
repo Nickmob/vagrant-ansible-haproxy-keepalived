@@ -23,8 +23,8 @@ defaults
     log                     global
     option                  httplog
     option                  dontlognull
-    option http-server-close
-    option forwardfor       except 127.0.0.0/8
+    option                  http-server-close
+    option                  forwardfor       except 127.0.0.0/8
     option                  redispatch
     retries                 3
     timeout http-request    10s
@@ -39,7 +39,8 @@ defaults
 #---------------------------------------------------------------------
 #HAProxy Monitoring Config
 #---------------------------------------------------------------------
-listen haproxy-stat *:8080                #Haproxy Monitoring run on port 8080
+listen haproxy-stat
+    bind *:8080                #Haproxy Monitoring run on port 8080
     mode http
     option forwardfor
     option httpclose

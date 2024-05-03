@@ -1,5 +1,6 @@
 ---
 
-- yum:
-    name: ['epel-release', 'keepalived', 'psmisc', 'tcpdump']
+- apt:
+    name: ['keepalived', 'tcpdump']
     state: present
+    update_cache: yes

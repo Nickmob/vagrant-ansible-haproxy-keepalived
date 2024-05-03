@@ -1,5 +1,5 @@
-# VRRP + HAproxy
-## How to run
+# VRRP + HAproxy + Nginx
+## Как запускать
 ```
 vagrant up
 ```
@@ -41,3 +41,8 @@ http://127.0.0.1:8080/stats
 
     username: stat
     password: statpass
+
+## Версии
+* OS: Ubuntu 22.04
+* HAProxy: 2.8 (PPA)
+* Keepalived: 2.2.4
