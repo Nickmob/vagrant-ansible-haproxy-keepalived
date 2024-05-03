@@ -28,7 +28,7 @@
   roles:
     - keepalived
   vars:
-    interface: eth1
+    interface: enp0s8
     virtual_router_id: 1
     virtual_ipaddress: 10.0.26.81
     priority: 101
@@ -41,7 +41,7 @@
   roles:
     - keepalived
   vars:
-    interface: eth1
+    interface: enp0s8
     virtual_router_id: 1
     virtual_ipaddress: 10.0.26.81
     priority: 100
