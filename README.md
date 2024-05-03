@@ -1,46 +1,52 @@
 # VRRP + HAproxy + Nginx
+
+Отказоустойчивый стенд с двумя балансировщиками HAProxy с VRRP, за которыми стоят два веб-сервера Nginx
+
 ## Как запускать
 ```
 vagrant up
 ```
-
 ## Ansible Playbooks
 
 ```
 cd provision
 ansible-playbook playbooks/environment.yml
 ```
-
-### Hosts
+## Хосты
 
 - [lb] 
-    -haproxy1 (10.0.26.201)
-    -haproxy2 (10.0.26.202)
+    - haproxy1 (10.0.26.201)
+    - haproxy2 (10.0.26.202)
 - [webapp]
     - web1 (10.0.26.101)
     - web2 (10.0.26.102)
 
 
-#Web-pages access
+# Доступ к веб-интерфейсу
 
-### VIP access
+## VIP access
 http://10.0.26.81
+
 http://10.0.26.81:8080/stats
 
-###Web servers
+## Веб-серверы
+
 web1: http://10.0.26.201
 
 web2: http://10.0.26.202
 
-###Load balancer server
+## Балансировщики
+
 lb1: http://10.0.26.101
+
 lb2: http://10.0.26.102
 
-####LB Statistic page
+### Страница статистики HAProxy
+
 http://127.0.0.1:8080/stats
 
-    username: stat
-    password: statpass
+* логин: stat
+* пароль: statpass
 
 ## Версии
 * OS: Ubuntu 22.04
