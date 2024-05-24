@@ -1,4 +1,4 @@
 ---
 
-- include: install_rh.yml
-- include: configure_rh.yml
+- include_tasks: install_rh.yml
+- include_tasks: configure_rh.yml
